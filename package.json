@@ -1,0 +1,32 @@
+{
+  "name": "2.5-07-final-project",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --cache",
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --cache --fix",
+    "deploy": "npm run build && gh-pages -d dist/",
+    "deploy:clean": "gh-pages-clean && npm run deploy"
+  },
+  "dependencies": {
+    "d3": "^7.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "autoprefixer": "^10.4.1",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^3.2.3",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.8",
+    "vite": "^2.7.2"
+  }
+}
