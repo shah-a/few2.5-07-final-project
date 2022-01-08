@@ -10,7 +10,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App min-h-screen flex flex-col bg-gradient-to-r from-blue-500 to-zinc-200">
+    <div className="App">
       <Comp data={data} />
     </div>
   );

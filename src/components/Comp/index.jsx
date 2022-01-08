@@ -2,7 +2,7 @@ import useD3 from '../../hooks/useD3';
 
 const index = ({ data }) => {
   const renderFn = (container) => {
-    container.select('.Comp')
+    container.select('.container')
       .selectAll('div')
       .data([5, 6, 2, 8, 4, 9, 1, 4, 9, 1])
       .enter()
