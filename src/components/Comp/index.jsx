@@ -2,7 +2,7 @@ import { useState } from 'react';
 import useD3 from '../../hooks/useD3';
 
 const index = ({ data }) => {
-  const [pokemon, setPokemon] = useState('Bulbasaur');
+  const [pokemon, setPokemon] = useState('Leafeon');
 
   const pokemonOptions = data.map((d) => (
     <option
@@ -23,6 +23,7 @@ const index = ({ data }) => {
 
   return (
     <div className="Comp m-5">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/470.png" alt="pokemon" />
       <select
         className="px-3 py-1 mb-3 border-2 rounded"
         value={pokemon}
