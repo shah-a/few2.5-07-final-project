@@ -1,9 +1,8 @@
 import useD3 from '../../hooks/useD3';
 
 const index = ({ data }) => {
-  const renderFn = (container) => {
-    container.select('.container')
-      .selectAll('div')
+  const renderFn = (d3Container) => {
+    d3Container.selectAll('div')
       .data([5, 6, 2, 8, 4, 9, 1, 4, 9, 1])
       .enter()
       .append('div')
@@ -15,17 +14,12 @@ const index = ({ data }) => {
       .style('width', (d) => `${(d / 10) * 100}%`)
       .style('height', '3rem')
       .style('border-radius', '3rem')
-      .style('font-family', 'helvetica, sans-serif')
-      .style('font-size', (d) => `${d * 5}px`)
-      .style('opacity', (d) => `${d / 10}`);
+      .style('font-family', 'helvetica, sans-serif');
   };
 
   return (
     <div className="Comp">
-      <div
-        className="container"
-        ref={useD3(renderFn, [data.length])}
-      />
+      <div ref={useD3(renderFn, [data.length])} />
     </div>
   );
 };
