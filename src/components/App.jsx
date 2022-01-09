@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    csv('/PokeTypeMatchupData.csv').then((csvContent) => setData(csvContent));
+    csv(`${import.meta.env.BASE_URL}PokeTypeMatchupData.csv`).then((csvContent) => setData(csvContent));
   }, []);
 
   return (
