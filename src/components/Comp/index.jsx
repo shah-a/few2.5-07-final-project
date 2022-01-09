@@ -1,25 +1,36 @@
+import { useState } from 'react';
 import useD3 from '../../hooks/useD3';
 
 const index = ({ data }) => {
-  const renderFn = (d3Container) => {
-    d3Container.selectAll('div')
-      .data([5, 6, 2, 8, 4, 9, 1, 4, 9, 1])
+  const [pokemon, setPokemon] = useState('Bulbasaur');
+
+  const pokemonOptions = data.map((d) => (
+    <option
+      key={d.Name}
+      value={d.Name}
+    >
+      {`${d.Number}: ${d.Name}`}
+    </option>
+  ));
+
+  const renderData = (d3Container) => {
+    d3Container.selectAll('p')
+      .data(data)
       .enter()
-      .append('div')
-      .text((d) => `$${d.toFixed(2)}`)
-      .style('padding', '1em')
-      .style('background', 'linear-gradient(to left, #e66465, #9198e5)')
-      .style('margin', '1px')
-      .style('color', 'white')
-      .style('width', (d) => `${(d / 10) * 100}%`)
-      .style('height', '3rem')
-      .style('border-radius', '3rem')
-      .style('font-family', 'helvetica, sans-serif');
+      .append('p')
+      .text((d) => `${d.Number}: ${d.Name}`);
   };
 
   return (
-    <div className="Comp">
-      <div ref={useD3(renderFn, [data.length])} />
+    <div className="Comp m-5">
+      <select
+        className="px-3 py-1 mb-3 border-2 rounded"
+        value={pokemon}
+        onChange={(e) => setPokemon(e.target.value)}
+      >
+        {pokemonOptions}
+      </select>
+      <div ref={useD3(renderData, [data.length])} />
     </div>
   );
 };
