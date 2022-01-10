@@ -2,9 +2,15 @@ import { useState } from 'react';
 import useD3 from '../../hooks/useD3';
 
 const index = ({ data }) => {
-  const [pokemon, setPokemon] = useState('Leafeon');
+  const [name, setName] = useState('Leafeon');
+  const [num, setNum] = useState('470');
 
-  const pokemonOptions = data.map((d) => (
+  const nameToNum = data.reduce((acc, d) => {
+    acc[d.Name] = d.Number.slice(1);
+    return acc;
+  }, {});
+
+  const options = data.map((d) => (
     <option
       key={d.Name}
       value={d.Name}
@@ -13,7 +19,7 @@ const index = ({ data }) => {
     </option>
   ));
 
-  const renderData = (d3Container) => {
+  const renderFn = (d3Container) => {
     d3Container.selectAll('p')
       .data(data)
       .enter()
@@ -23,15 +29,18 @@ const index = ({ data }) => {
 
   return (
     <div className="Comp m-5">
-      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/470.png" alt="pokemon" />
+      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${num}.png`} alt={name} />
       <select
         className="px-3 py-1 mb-3 border-2 rounded"
-        value={pokemon}
-        onChange={(e) => setPokemon(e.target.value)}
+        value={name}
+        onChange={(e) => {
+          setName(e.target.value);
+          setNum(nameToNum[e.target.value]);
+        }}
       >
-        {pokemonOptions}
+        {options}
       </select>
-      <div ref={useD3(renderData, [data.length])} />
+      <div ref={useD3(renderFn, [data.length])} />
     </div>
   );
 };
