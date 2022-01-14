@@ -5,7 +5,7 @@ import Select from './Select';
 import Display from './Display';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(undefined);
   const [name, setName] = useState('Leafeon');
   const [num, setNum] = useState('470');
 
@@ -35,8 +35,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Select data={data} name={name} setName={setName} num={num} setNum={setNum} />
-      <Display data={data} types={types} name={name} num={num} />
+      {data && <Select data={data} name={name} setName={setName} num={num} setNum={setNum} />}
+      {data && <Display data={data} types={types} name={name} num={num} />}
     </div>
   );
 }
