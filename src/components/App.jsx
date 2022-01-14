@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { csv } from 'd3';
-import Data from './Data';
+import Display from './Display';
 import Header from './Header';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Data data={data} />
+      <Display data={data} types={types} />
     </div>
   );
 }

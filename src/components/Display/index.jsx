@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useD3 from '../../hooks/useD3';
 
-function Data({ data }) {
+function Display({ data, types }) {
   const [name, setName] = useState('Leafeon');
   const [num, setNum] = useState('470');
 
@@ -45,4 +45,4 @@ function Data({ data }) {
   );
 }
 
-export default Data;
+export default Display;
