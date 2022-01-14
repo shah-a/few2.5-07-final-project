@@ -7,3 +7,35 @@
     font-family: 'Roboto', sans-serif;
   }
 }
+
+/* @layer components {
+  .bg-gradient {
+    @apply bg-gradient-to-r from-emerald-200 to-teal-300;
+  }
+
+  .bg-gradient-reverse {
+    @apply bg-gradient-to-r from-teal-300 to-emerald-200;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-500;
+  }
+
+  .text-gradient-reverse {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-emerald-400;
+  }
+} */
+
+@layer utilities {
+  @keyframes wiggle {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(20deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+  }
+
+  .animate-wiggle {
+    animation: wiggle 0.5s linear;
+  }
+}
