@@ -29,7 +29,7 @@ function Display(props) {
 
     const colourScale = d3.scaleOrdinal()
       .domain([0, 0.25, 0.5, 1, 2, 4])
-      .range(d3.schemeSpectral[5].reverse());
+      .range(['', '#c4b5fd', '#7dd3fc', '#6ee7b7', '#fdba74', '#f87171']);
 
     const xAxis = d3.axisBottom(xScale)
       .tickFormat(d3.format('.2f'))
@@ -54,7 +54,7 @@ function Display(props) {
       .attr('class', 'bar')
       .attr('x', margin + 1)
       .attr('y', (d) => yScale(d))
-      .attr('width', (d) => xScale(row[d]))
+      .attr('width', (d) => xScale(row[d]) - xScale(0))
       .attr('height', yScale.bandwidth())
       .attr('fill', (d) => colourScale(row[d]));
   }, [name, num]);
