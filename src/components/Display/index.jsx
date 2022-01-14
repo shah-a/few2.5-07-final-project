@@ -23,8 +23,8 @@ function Display(props) {
   }, [name, num]);
 
   return (
-    <div className="Display">
-      {/* <svg width={width} height={height} ref={ref} /> */}
+    <div className="Display flex flex-col justify-center">
+      {/* <svg width={475} height={475} ref={ref} /> */}
       <div ref={ref} />
     </div>
   );

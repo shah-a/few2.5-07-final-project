@@ -33,10 +33,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App max-w-5xl mx-auto">
       <Header />
-      {data && <Select data={data} name={name} setName={setName} num={num} setNum={setNum} />}
-      {data && <Display data={data} types={types} name={name} num={num} />}
+      <div className="p-10 flex justify-between">
+        {data && <Select data={data} name={name} setName={setName} num={num} setNum={setNum} />}
+        {data && <Display data={data} types={types} name={name} num={num} />}
+      </div>
     </div>
   );
 }

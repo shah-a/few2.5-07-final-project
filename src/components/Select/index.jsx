@@ -18,8 +18,7 @@ function Select(props) {
   ));
 
   return (
-    <div className="Select">
-      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${num}.png`} alt={name} />
+    <div className="Select flex flex-col">
       <select
         className="px-3 py-1 mb-3 border-2 rounded"
         value={name}
@@ -30,6 +29,7 @@ function Select(props) {
       >
         {options}
       </select>
+      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${num}.png`} alt={name} />
     </div>
   );
 }
