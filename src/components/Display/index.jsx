@@ -1,46 +1,35 @@
-import { useState } from 'react';
-import useD3 from '../../hooks/useD3';
+import { useEffect, useRef } from 'react';
+import * as d3 from 'd3';
+// import useD3 from '../../hooks/useD3';
 
-function Display({ data, types }) {
-  const [name, setName] = useState('Leafeon');
-  const [num, setNum] = useState('470');
+function Display(props) {
+  const {
+    data, types, name, num,
+  } = props;
 
-  const nameToNum = data.reduce((acc, d) => {
-    acc[d.Name] = d.Number;
-    return acc;
-  }, {});
+  const ref = useRef();
 
-  const options = data.map((d) => (
-    <option
-      key={d.Name}
-      value={d.Name}
-    >
-      {`#${d.Number}: ${d.Name}`}
-    </option>
-  ));
+  const row = data.filter((d) => d.Name === name)[0];
 
-  const renderFn = (d3Container) => {
-    d3Container.selectAll('p')
-      .data(data)
-      .enter()
+  useEffect(() => {
+    console.log('rendering');
+
+    d3.select(ref.current)
       .append('p')
-      .text((d) => `#${d.Number}: ${d.Name}`);
-  };
+      .text('asdf');
+
+    // d3.select(ref.current)
+    //   .selectAll('p')
+    //   .data(data)
+    //   .enter()
+    //   .append('p')
+    //   // .text((d) => `#${d.Number}: ${d.Name}`);
+    //   .text((d) => (d.Name === name ? `#${d.Number}: ${d.Name}` : null));
+  }, [data.length, name]);
 
   return (
-    <div className="Data m-5">
-      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${num}.png`} alt={name} />
-      <select
-        className="px-3 py-1 mb-3 border-2 rounded"
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-          setNum(nameToNum[e.target.value]);
-        }}
-      >
-        {options}
-      </select>
-      <div ref={useD3(renderFn, [data.length])} />
+    <div className="Display">
+      <div ref={ref} />
     </div>
   );
 }

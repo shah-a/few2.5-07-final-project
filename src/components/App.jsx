@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { csv } from 'd3';
-import Display from './Display';
 import Header from './Header';
+import Select from './Select';
+import Display from './Display';
 
 function App() {
   const [data, setData] = useState([]);
+  const [name, setName] = useState('Leafeon');
+  const [num, setNum] = useState('470');
 
   const types = [
     'Normal', 'Fire', 'Water',
@@ -32,7 +35,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Display data={data} types={types} />
+      <Select data={data} name={name} setName={setName} num={num} setNum={setNum} />
+      <Display data={data} types={types} name={name} num={num} />
     </div>
   );
 }
