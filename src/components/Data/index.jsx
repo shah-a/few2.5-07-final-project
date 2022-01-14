@@ -28,7 +28,7 @@ const index = ({ data }) => {
   };
 
   return (
-    <div className="Comp m-5">
+    <div className="Data m-5">
       <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${num}.png`} alt={name} />
       <select
         className="px-3 py-1 mb-3 border-2 rounded"

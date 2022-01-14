@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { csv } from 'd3';
-import Comp from './Comp';
+import Data from './Data';
 
 function App() {
   const [data, setData] = useState([]);
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <Comp data={data} />
+      <Data data={data} />
     </div>
   );
 }
