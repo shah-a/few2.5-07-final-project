@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-// import useD3 from '../../hooks/useD3';
 
 function Display(props) {
   const {
@@ -12,23 +11,20 @@ function Display(props) {
   const row = data.filter((d) => d.Name === name)[0];
 
   useEffect(() => {
-    console.log('rendering');
+    const div = d3.select(ref.current);
 
-    d3.select(ref.current)
+    div.selectAll('*').remove();
+
+    div.selectAll('p')
+      .data(types)
+      .enter()
       .append('p')
-      .text('asdf');
-
-    // d3.select(ref.current)
-    //   .selectAll('p')
-    //   .data(data)
-    //   .enter()
-    //   .append('p')
-    //   // .text((d) => `#${d.Number}: ${d.Name}`);
-    //   .text((d) => (d.Name === name ? `#${d.Number}: ${d.Name}` : null));
-  }, [data.length, name]);
+      .text((d) => `${d}: ${row[d]}`);
+  }, [name, num]);
 
   return (
     <div className="Display">
+      {/* <svg width={width} height={height} ref={ref} /> */}
       <div ref={ref} />
     </div>
   );
