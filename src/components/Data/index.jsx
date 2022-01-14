@@ -6,7 +6,7 @@ function Data({ data }) {
   const [num, setNum] = useState('470');
 
   const nameToNum = data.reduce((acc, d) => {
-    acc[d.Name] = d.Number.slice(1);
+    acc[d.Name] = d.Number;
     return acc;
   }, {});
 
@@ -15,7 +15,7 @@ function Data({ data }) {
       key={d.Name}
       value={d.Name}
     >
-      {`${d.Number}: ${d.Name}`}
+      {`#${d.Number}: ${d.Name}`}
     </option>
   ));
 
@@ -24,7 +24,7 @@ function Data({ data }) {
       .data(data)
       .enter()
       .append('p')
-      .text((d) => `${d.Number}: ${d.Name}`);
+      .text((d) => `#${d.Number}: ${d.Name}`);
   };
 
   return (
