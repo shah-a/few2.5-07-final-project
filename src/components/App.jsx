@@ -18,7 +18,7 @@ function App() {
     'Dark', 'Steel', 'Fairy',
   ];
 
-  const row = (d) => {
+  const cleanRow = (d) => {
     const dataRow = d;
     dataRow.Number = dataRow.Number.slice(1);
     types.map((type) => {
@@ -29,7 +29,7 @@ function App() {
   };
 
   useEffect(() => {
-    csv(`${import.meta.env.BASE_URL}PokeTypeMatchupData.csv`, row).then((csvContent) => setData(csvContent));
+    csv(`${import.meta.env.BASE_URL}PokeTypeMatchupData.csv`, cleanRow).then((csvContent) => setData(csvContent));
   }, []);
 
   return (
