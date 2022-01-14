@@ -2,13 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-}
-
-/* @layer components {
+@layer components {
   .bg-gradient {
     @apply bg-gradient-to-r from-emerald-200 to-teal-300;
   }
@@ -24,7 +18,7 @@
   .text-gradient-reverse {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-emerald-400;
   }
-} */
+}
 
 @layer utilities {
   @keyframes wiggle {
