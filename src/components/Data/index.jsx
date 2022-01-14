@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useD3 from '../../hooks/useD3';
 
-const index = ({ data }) => {
+function Data({ data }) {
   const [name, setName] = useState('Leafeon');
   const [num, setNum] = useState('470');
 
@@ -43,6 +43,6 @@ const index = ({ data }) => {
       <div ref={useD3(renderFn, [data.length])} />
     </div>
   );
-};
+}
 
-export default index;
+export default Data;
