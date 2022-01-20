@@ -9,7 +9,9 @@ function Display(props) {
   const ref = useRef();
   const width = 475;
   const height = 475;
-  const margin = 50;
+  const margin = {
+    top: 50, right: 50, bottom: 50, left: 50,
+  };
   const row = data.filter((d) => d.Name === name)[0];
 
   useEffect(() => {
@@ -19,12 +21,12 @@ function Display(props) {
 
     const xScale = d3.scaleLinear()
       .domain([0, 4])
-      .range([margin, width - margin])
+      .range([margin.left, width - margin.right])
       .nice();
 
     const yScale = d3.scaleBand()
       .domain(types)
-      .rangeRound([margin, height - margin])
+      .rangeRound([margin.top, height - margin.bottom])
       .padding(0.125);
 
     const colourScale = d3.scaleOrdinal()
@@ -39,11 +41,11 @@ function Display(props) {
     const yAxis = d3.axisLeft(yScale);
 
     svg.append('g')
-      .attr('transform', `translate(0, ${height - margin})`)
+      .attr('transform', `translate(0, ${height - margin.bottom})`)
       .call(xAxis);
 
     svg.append('g')
-      .attr('transform', `translate(${margin}, 0)`)
+      .attr('transform', `translate(${margin.left}, 0)`)
       .call(yAxis);
 
     svg.append('g')
@@ -52,7 +54,7 @@ function Display(props) {
       .enter()
       .append('rect')
       .attr('class', 'bar')
-      .attr('x', margin + 1)
+      .attr('x', margin.left + 1)
       .attr('y', (d) => yScale(d))
       .attr('width', (d) => xScale(row[d]) - xScale(0))
       .attr('height', yScale.bandwidth())
