@@ -16,8 +16,10 @@ Navigate to the [live URL](https://shah-a.github.io/few2.5-07-final-project/). U
 
 Some features that can be added to improve the app:
 
+- Search by Pokemon name/number (search box should have auto-complete)
 - Display selected pokemon's type(s) beneath its image
-- Search by name/number (search box should have auto-complete)
+- Make svg display component responsive (rather than fixed width/height)
+- Add a button for dark mode colour theme
 
 ## Acknowledgements & Resources
 
