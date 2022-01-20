@@ -3,7 +3,7 @@ function Header() {
     <header className="Header p-10 flex justify-between border-b">
       <h1 className="text-4xl font-bold text-gradient">Pokemon Type Matchup</h1>
       <a
-        href="https://github.com/shah-a/int2.2-pokemon-type-matchup/"
+        href="https://github.com/shah-a/few2.5-07-final-project/"
         target="_blank"
         rel="noreferrer"
         className="gh-hover transition-colors motion-safe:hover:animate-wiggle"

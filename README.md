@@ -1,4 +1,6 @@
-# INT 2.2: Pokemon Type Matchup
+# Pokemon Type Matchup
+
+**FEW 2.5: Final Project**
 
 ## Description
 
@@ -8,7 +10,7 @@ The application is a React.js app, developed using [Vite](https://vitejs.dev/) f
 
 ## Usage
 
-Navigate to the [live URL](https://shah-a.github.io/int2.2-pokemon-type-matchup/). Use the dropdown menu to select a pokemon from the list. The graph will update automatically to display the selected pokemon's type matchup statistics.
+Navigate to the [live URL](https://shah-a.github.io/few2.5-07-final-project/). Use the dropdown menu to select a pokemon from the list. The graph will update automatically to display the selected pokemon's type matchup statistics.
 
 ## Future to-do
 
