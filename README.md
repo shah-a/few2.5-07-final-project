@@ -20,6 +20,10 @@ Some features that can be added to improve the app:
 - Display selected pokemon's type(s) beneath its image
 - Make svg display component responsive (rather than fixed width/height)
 - Add a button for dark mode colour theme
+- Fill in missing pokemon data in `PokeTypeMatchupData.csv`
+- Update `PokeTypeMatchupData.csv` to account for abilities (e.g. [Lunatone](https://pokemondb.net/pokedex/lunatone) and [Solrock](https://pokemondb.net/pokedex/solrock) have `Ground` immunity due to `Levitate` ability)
+- Add support for correctly displaying alternate form images (i.e. Alolan/Galarian form, Rotom forms, etc..)
+- Use local image assets (rather than pull from the pokemon website)
 
 ## Acknowledgements & Resources
 
