@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .gh-hover {
+  .gh-green {
     @apply text-emerald-700 hover:text-emerald-500
   }
 
