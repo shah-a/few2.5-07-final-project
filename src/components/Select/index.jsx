@@ -18,9 +18,9 @@ function Select(props) {
   ));
 
   return (
-    <div className="Select flex flex-col">
+    <div className="Select">
       <select
-        className="px-3 py-1 mb-3 border-2 rounded"
+        className="px-3 py-1 mb-3 border-2 rounded w-full"
         value={name}
         onChange={(e) => {
           setName(e.target.value);

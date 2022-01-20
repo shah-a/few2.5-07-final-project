@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App max-w-5xl mx-auto">
       <Header />
-      <div className="p-10 flex justify-between">
+      <div className="p-10 grid lg:grid-cols-2 grid-cols-1 place-items-center">
         {data && <Select data={data} name={name} setName={setName} num={num} setNum={setNum} />}
         {data && <Display data={data} types={types} name={name} num={num} />}
       </div>

@@ -10,7 +10,7 @@ function Display(props) {
   const width = 475;
   const height = 475;
   const margin = {
-    top: 50, right: 50, bottom: 50, left: 50,
+    top: 25, right: 25, bottom: 25, left: 75,
   };
   const row = data.filter((d) => d.Name === name)[0];
 
@@ -62,7 +62,7 @@ function Display(props) {
   }, [name, num]);
 
   return (
-    <div className="Display flex flex-col justify-center">
+    <div className="Display">
       <svg width={475} height={475} ref={ref} />
     </div>
   );
