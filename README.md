@@ -29,3 +29,4 @@ Some features that can be added to improve the app:
 
 - Dataset by [lunamcbride24](https://www.kaggle.com/lunamcbride24) from [kaggle](https://www.kaggle.com/lunamcbride24/pokemon-type-matchup-data)
 - Pokemon sprites/images from the [official pokemon site](https://www.pokemon.com/us/pokedex/)'s asset handler
+- Favicon generated on [favicon.io](https://favicon.io/emoji-favicons/crossed-swords) using [Twitter Twemoji](https://twemoji.twitter.com/)
